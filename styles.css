@@ -1,92 +1,141 @@
-/* Background Image */
-.bg-image {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 100vh;
-  min-width: 100vw;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 0.3;
-  margin: 0;
-  padding: 0;
+/* Example: using Orbitron from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body  {
+  font-family: 'Orbitron', sans-serif;
+  /* other styling... */
 }
 
-/* Main Styles */
+h1, h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+}
+
+p {
+  font-family: 'Fira Mono', monospace;  /* maybe use a mono for tech/terminal feel */
+}
+
+
+
+/* Reset and font setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background setup */
 body {
-  @apply bg-gray-900 text-white min-h-screen m-0 p-0;
-  height: 100%;
-  width: 100%;
-  overflow-x: hidden;
+    background: url("images/cyber.sec.png") no-repeat center center/cover;
+    height: 100vh;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Header Styles */
-.header {
-  @apply fixed w-full bg-gray-900 bg-opacity-90 backdrop-blur-sm;
+/* Dark transparent overlay for readability */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
 }
 
-.nav-container {
-  @apply container mx-auto px-6 py-4 flex justify-between items-center;
+/* Navbar styling */
+.navbar {
+    width: 100%;
+    padding: 20px 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
 }
 
-.logo-container {
-  @apply flex items-center space-x-2;
+.navbar .logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #00ffcc;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.3s;
 }
 
-.logo {
-  @apply h-10 w-auto;
+.navbar .logo:hover {
+    text-shadow: 0 0 10px #00ffcc;
 }
 
-.logo-text {
-  @apply text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent;
+.nav-buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 
-.nav-links {
-  @apply space-x-4;
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
 }
 
-/* Button Styles */
-.btn {
-  @apply px-4 py-2 text-sm font-medium rounded-md transition duration-300;
+.nav-link:hover, .nav-link.active {
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc;
 }
 
-.btn-login {
-  @apply text-white hover:bg-gray-800;
+.nav-buttons .btn {
+    background: #00ffcc;
+    border: none;
+    padding: 10px 20px;
+    color: #000;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 10px;
 }
 
-.btn-register {
-  @apply bg-blue-600 text-white hover:bg-blue-700;
+.nav-buttons .btn:hover {
+    background: #00ccaa;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Main Content Styles */
-.main-content {
-  @apply container mx-auto px-6 pt-32 pb-16;
+/* Main content */
+.content {
+    position: relative;
+    z-index: 2;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    margin-top: -50px; /* Move content up slightly */
 }
 
-.content-container {
-  @apply max-w-3xl mx-auto text-center;
-}
-
-.main-heading {
-  @apply text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent;
+.main-title {
+    font-size: 4em;
+    color: #00ffcc;
+    text-shadow: 0 0 15px #00ffcc;
 }
 
 .description {
-  @apply text-xl md:text-2xl text-gray-300 mb-8;
+    margin-top: 20px;
+    font-size: 1.2em;
+    max-width: 800px;
+    line-height: 1.6;
+    color: #e0e0e0;
 }
 
-.cta-buttons {
-  @apply mt-12 space-x-4;
-}
-
-.btn-primary {
-  @apply px-8 py-3 text-lg font-medium rounded-md bg-blue-600 text-white hover:bg-blue-700;
-}
-
-.btn-secondary {
-  @apply px-8 py-3 text-lg font-medium rounded-md border border-blue-600 text-blue-400 hover:bg-blue-900 hover:bg-opacity-30;
-}
 
 
