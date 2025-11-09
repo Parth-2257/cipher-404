@@ -140,14 +140,127 @@ body {
 .content {
     position: relative;
     z-index: 2;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
-    padding: 0 20px;
-    margin-top: -50px; /* Move content up slightly */
+    padding: 100px 20px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Domains Page Styles */
+.domains-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.domains-title {
+    font-size: 2.5em;
+    color: #00ffcc;
+    text-shadow: 0 0 15px #00ffcc;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.domains-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: #00ffcc;
+    box-shadow: 0 0 10px #00ffcc;
+}
+
+.domain-category {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    border: 1px solid rgba(0, 255, 204, 0.2);
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.domain-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 255, 204, 0.2);
+}
+
+.domain-category h2 {
+    color: #00ffcc;
+    font-size: 1.8em;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.domain-category h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #00ffcc;
+}
+
+.domain-description {
+    color: #e0e0e0;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 1.5rem;
+}
+
+.topic {
+    background: rgba(0, 255, 204, 0.1);
+    color: #fff;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border-left: 3px solid #00ffcc;
+    transition: all 0.3s ease;
+    font-size: 0.95em;
+}
+
+.topic:hover {
+    background: rgba(0, 255, 204, 0.2);
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .topics-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .domain-category {
+        padding: 1.5rem;
+    }
+    
+    .domains-title {
+        font-size: 2em;
+    }
+    
+    .domain-category h2 {
+        font-size: 1.5em;
+    }
 }
 
 .main-title {
